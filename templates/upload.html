@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil CSV - Engagement Rate</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
+</head>
+<body>
+  <h1>📊 Analisis Engagement Rate</h1>
+  <p class="lead text-muted">Data sosial media kamu sudah dianalisis secara otomatis!</p>
+</div>
+  {% if table %}
+    <h2>Data yang Dihitung:</h2>
+    <div class="table-container">
+      {{ table | safe }}
+    </div>
+  {% else %}
+    <p>Tidak ada data yang ditampilkan. Pastikan file <code>data.csv</code> ada di folder proyek kamu.</p>
+  {% endif %}
+
+  <br>
+  <a href="{{ url_for('index') }}">← Kembali ke Kalkulasi Manual</a>
+</body>
+</html>
